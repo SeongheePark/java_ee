@@ -30,12 +30,13 @@ public class sv extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		String type = request.getParameter("type");
-		if("type".equals("Join")) {
+		System.out.println("type:" + type);
+		if(type.equals("Join")) {
 			int result = dao.save(name, password);
 			if(result != 0) {
 				System.out.println("저장 성공!");						
-		} 
-			}else if ("type".equals("SignOut")) {
+				} 
+		}else if (type.equals("SignOut")) {
 				dao.delete(name, password);
 				System.out.println("삭제 성공!");
 		}

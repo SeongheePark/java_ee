@@ -102,7 +102,7 @@ a:hover {
 					class="form-control" placeholder="Enter password" id="password"
 					name="password">
 			</div>
-			<div class="button"><button type="submit" class="btn btn-outline-secondary" name="type">SignOut</button></div>
+			<div class="button"><input type="submit" name="type" value="SignOut">SignOut</div>
 		</form>
 	</nav>
 </body>

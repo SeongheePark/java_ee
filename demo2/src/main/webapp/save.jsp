@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>MySQL 연결</title>
+<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script
@@ -102,7 +103,10 @@ a:hover {
 					class="form-control" placeholder="Enter password" id="password"
 					name="password">
 			</div>
-			<div class="button"><button type="submit" class="btn btn-outline-secondary" name="type">Join</button></div>
+			<div class="button">
+				<input type="submit" name="type" value="Join">
+			</div>
+			<!-- <div class="button"><button type="submit" class="btn btn-outline-secondary" name="type" >Join</button></div> -->
 		</form>
 	</nav>
 </body>
