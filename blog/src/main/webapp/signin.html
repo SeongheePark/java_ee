@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--signin.html 요청하면 화면을 그리는 담당  
+		form 태그 중 method 속성, action 속성에 대해 알아보고
+		name값과 password값을 보낼 수 있는 화면을 구성하세요!
+		버튼을 누르면 연산 처리를 할 서블릿 객체를 만들어 주세요
+		method방식: POST 서버 콘솔창에 넘겨받은 데이터를 출력하세요-->
+
+	<h1>Sign In</h1>
+	<form action="/blog/servlet" method="post">
+		name <input type="text" name="name" value="성희"> 
+		password <input type="text" name="password" value="1234"> 
+		<input type="submit" name="check" value="signin">
+	</form>
+</body>
+</html>

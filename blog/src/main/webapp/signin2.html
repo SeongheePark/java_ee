@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px;
+	padding: 20px;
+}
+ul {
+	list-style: none;
+	display: flex;
+}
+ul li {
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+	<h1>로그인</h1>
+	<hr>
+	<form action="/blog/loginsv" method="post">
+		<div>
+			<input type="text" name="name" placeholder="아이디"><br> <input
+				type="password" name="password" placeholder="비밀번호"><br>
+		</div>		
+			<input type="checkbox" id="loginButton"> 아이디 저장 <br> <input type="submit"
+				name="login" value="로그인">
+		<ul>
+			<li>회원가입</li>
+			<li>아이디 찾기</li>
+			<li>비밀번호 찾기</li>
+		</ul>
+	</form>
+</body>
+</html>
