@@ -8,6 +8,9 @@ public class Dto {
 		this.name = name;
 		this.password = password;
 	}
+	public Dto() {
+	
+	}
 
 	public String getName() {
 		return name;

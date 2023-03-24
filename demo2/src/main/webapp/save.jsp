@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>MySQL 연결</title>
-<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script
@@ -48,6 +47,7 @@ nav {
 	align-items: center;
 	text-decoration: none;
 }
+
 ul {
 	display: flex;
 	list-style: none;
@@ -95,18 +95,16 @@ a:hover {
 		<h1>J O I N</h1>
 		<form action="/demo2/sv" method="post">
 			<div class="form-group">
-				<label for="name"> 이름을 입력해주세요 : </label> <input type="text"
-					class="form-control" placeholder="Enter name" id="name" name="name">
+				<label for="name"> 이름을 입력해주세요 : </label> 
+				<input type="text" class="form-control" placeholder="Enter name" id="name" name="name">
 			</div>
 			<div class="form-group">
-				<label for="password"> 비밀번호를 입력해주세요 : </label> <input type="password"
-					class="form-control" placeholder="Enter password" id="password"
-					name="password">
+				<label for="password"> 비밀번호를 입력해주세요 : </label> 
+				<input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
 			</div>
 			<div class="button">
-				<input type="submit" name="type" value="Join">
+				<input type="submit" name="type" class="btn btn-outline-secondary" value="Join">
 			</div>
-			<!-- <div class="button"><button type="submit" class="btn btn-outline-secondary" name="type" >Join</button></div> -->
 		</form>
 	</nav>
 </body>

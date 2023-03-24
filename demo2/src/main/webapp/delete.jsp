@@ -85,7 +85,7 @@ a:visited {
 }
 
 a:hover {
-	background-color: gray;
+
 }
 </style>
 </head>
@@ -102,7 +102,7 @@ a:hover {
 					class="form-control" placeholder="Enter password" id="password"
 					name="password">
 			</div>
-			<div class="button"><input type="submit" name="type" value="SignOut">SignOut</div>
+			<div class="button"><input type="submit" name="type" class="btn btn-outline-secondary" value="SignOut"></div>
 		</form>
 	</nav>
 </body>

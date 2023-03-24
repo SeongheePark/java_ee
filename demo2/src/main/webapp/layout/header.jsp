@@ -25,6 +25,10 @@
 	;
 
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -46,6 +50,7 @@ nav {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
+	
 }
 ul {
 	display: flex;
@@ -85,14 +90,14 @@ a:visited {
 }
 
 a:hover {
-	background-color: gray;
+	
 }
 </style>
 </head>
 <body>
 	<nav>
 		<h1>L o g i n</h1>
-		<form action="/action_page.php">
+		<form action="/demo2/login.jsp" method="post">
 			<div class="form-group">
 				<label for="name"> name : </label> <input type="text"
 					class="form-control" placeholder="Enter name" id="name" name="name">
@@ -102,7 +107,8 @@ a:hover {
 					class="form-control" placeholder="Enter password" id="password"
 					name="password">
 			</div>
-			<div class="button"><button type="submit" class="btn btn-outline-secondary"><a href = "login.jsp">Login</a></button></div>
+			<input type="submit" class="btn btn-outline-secondary" value="Login">
+			
 		</form>
 		<ul class="nav nav-pills">
 			<li class="nav-item"><a class="nav-link" href="/demo2/save.jsp">회원가입</a></li>
