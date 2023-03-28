@@ -19,8 +19,8 @@ public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String message = "안녕 JSP~~";
-		request.setAttribute("msg", message);
+		String message = "forward 보내보기!";
+		request.setAttribute("message", message);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
 	}

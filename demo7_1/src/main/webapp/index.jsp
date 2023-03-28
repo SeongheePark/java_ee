@@ -7,12 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<h2> 여기는 index 파일</h2>
-		<div>
-			<%
-				String message = (String)request.getAttribute("msg");
-				out.println(message);
-			%>
-		</div>
+	<h1> result 값 보기</h1>
+	<%
+		response.setCharacterEncoding("UTF-8");
+		String message = (String)request.getAttribute("message");
+		out.println(message);
+	%>
 </body>
 </html>
