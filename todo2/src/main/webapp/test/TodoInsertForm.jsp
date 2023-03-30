@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h2>Todo List Insert Form</h2>
-	<form action="/todo/todoTest?action=insert" method="post">
+	<form action="/todo2/todoTest?action=insert" method="post">
 		<label> 할일 </label> 
 		<input type="text" name="title" required="required"> 
 		<label> 메모 </label>

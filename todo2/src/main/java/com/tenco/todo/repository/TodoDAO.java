@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.tenco.todo.dto.JoinDTO;
 import com.tenco.todo.dto.TodoListDTO;
 import com.tenco.todo.utils.DBHelper;
 
@@ -19,23 +20,26 @@ public class TodoDAO implements ITodoRepo {
 	}
 
 	@Override
-	public ArrayList<TodoListDTO> select() {
-		ArrayList<TodoListDTO> list = new ArrayList<>();
-		String strQuery = " SELECT * FROM TodoList ";
+	public ArrayList<JoinDTO> select() {
+		ArrayList<JoinDTO> list = new ArrayList<>();
+		String strQuery = " SELECT title, c.id AS cid, t.id AS tid, description, priority, completed, createdAt FROM "
+				+ "category AS c "
+				+ "LEFT JOIN todoList AS t "
+				+ "ON c.id = t.category_id ";
 		PreparedStatement pStmt = null;
 		ResultSet rs = null;
 		try {
 			pStmt = conn.prepareStatement(strQuery);
 			rs = pStmt.executeQuery();
-			while(rs.next()) {
-				int id = rs.getInt("id");
+			while (rs.next()) {
 				String title = rs.getString("title");
+				int cid = rs.getInt("cid");
+				int tid = rs.getInt("tid");
 				String description = rs.getString("description");
 				int priority = rs.getInt("priority");
 				int completed = rs.getInt("completed");
-				int categoryId = rs.getInt("category_id");
 				String createAt = rs.getString("createdAt");
-				TodoListDTO dto = new TodoListDTO(id, title, description, priority, completed, categoryId, createAt);
+				JoinDTO dto = new JoinDTO(title, cid, tid, description, priority, completed, createAt);
 				list.add(dto);
 			}
 		} catch (SQLException e) {
@@ -78,13 +82,46 @@ public class TodoDAO implements ITodoRepo {
 	}
 
 	@Override
-	public void update() {
-
+	public int update(int id, String title) {
+		int resultCount = 0;
+		String queryStr = " UPDATE todoList SET title = ? " + " WHERE id = ? ";
+		PreparedStatement pStmt = null;
+		try {
+			pStmt = conn.prepareStatement(queryStr);
+			pStmt.setString(1, title);
+			pStmt.setInt(2, id);
+			resultCount = pStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pStmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultCount;
 	}
 
 	@Override
-	public void delete() {
-
+	public int delete(int id) {
+		int resultCount = 0;
+		String queryStr = " DELETE FROM TodoList " + " WHERE id = ? ";
+		PreparedStatement pStmt = null;
+		try {
+			pStmt = conn.prepareStatement(queryStr);
+			pStmt.setInt(1, id);
+			pStmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pStmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultCount;
 	}
 
 }

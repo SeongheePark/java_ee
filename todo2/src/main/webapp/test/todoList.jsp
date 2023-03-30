@@ -11,26 +11,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Todo List</h2>
+	<h2>Total List</h2>
 	<table>
 		<tr>
-			<td>Id</td>
 			<td>Title</td>
+			<td>Category Id</td>
+			<td>TodoList Id</td>
 			<td>Description</td>
 			<td>Priority</td>
 			<td>Completed</td>
-			<td>CategoryId</td>
 			<td>CreateAt</td>
 		</tr>
 		<c:forEach var="todoList" items="${list}">
 		<tr>
-			<td>${todoList.id}</td>
 			<td>${todoList.title}</td>
+			<td>${todoList.cid}</td>
+			<td>${todoList.tid}</td>
 			<td>${todoList.description}</td>
 			<td>${todoList.priority}</td>
 			<td>${todoList.completed}</td>
-			<td>${todoList.categoryId}</td>
 			<td>${todoList.createAt}</td>
+			<td><button><a href="/todo2/todoTest?action=delete&cid=${todoList.id}">delete</a></button></td>
 		</tr>
 		</c:forEach>
 	</table>
